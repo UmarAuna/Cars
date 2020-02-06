@@ -5,10 +5,10 @@
     android:shape="rectangle"
     android:visible="true">
     <corners
-        android:bottomRightRadius="30dp"
+        android:bottomRightRadius="60dp"
         android:topLeftRadius="0dp"
         android:topRightRadius="0dp"
-        android:bottomLeftRadius="30dp"
+        android:bottomLeftRadius="60dp"
         android:radius="50dp" />
 
 

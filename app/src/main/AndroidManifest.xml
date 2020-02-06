@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CarOwners"></activity>
-        <activity android:name=".MyFIlters" />
+        <activity android:name=".MyFilters"></activity>
+        <activity android:name=".CarOwners" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
