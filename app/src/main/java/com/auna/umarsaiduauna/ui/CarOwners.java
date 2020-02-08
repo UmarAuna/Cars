@@ -3,6 +3,8 @@ package com.auna.umarsaiduauna.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListAdapter;
@@ -21,11 +23,28 @@ public class CarOwners extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Car Owners");
-        new Mytask().execute();
+        new Mytask(CarOwners.this).execute();
 
     }
 
     class Mytask extends AsyncTask<Void, Void, Void> {
+
+        private ProgressDialog dialog;
+        private ListActivity activity;
+        /** progress dialog to show user that the backup is processing. */
+
+        /** application context. */
+        private Context context;
+        public Mytask(ListActivity activity) {
+            this.activity = activity;
+            context = activity;
+            dialog = new ProgressDialog(context);
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Getting car list from CSV");
+            this.dialog.show();
+        }
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -59,6 +78,11 @@ public class CarOwners extends ListActivity {
 
             // Setting Adapter to ListView
             setListAdapter(adapter);
+
+
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
 
         }
 

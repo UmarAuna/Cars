@@ -23,4 +23,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_no_network"
+        app:layout_constraintEnd_toEndOf="@+id/swiperefresh"
+        app:layout_constraintStart_toStartOf="@+id/swiperefresh"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="No Internet Connection, Pull to refresh to check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.050000012"
+        tools:layout_editor_absoluteX="8dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
